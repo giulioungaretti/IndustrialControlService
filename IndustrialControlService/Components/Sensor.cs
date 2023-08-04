@@ -19,8 +19,20 @@ public abstract class Sensor : IDisposable
 
 
         // Initialize the timer to call the UpdateValue method every 1 second.  
-        timer = new Timer(_ => UpdateValue(), null, TimeSpan.FromMicroseconds(ScanRate), TimeSpan.FromMicroseconds(ScanRate));
+        timer = new Timer(_ => UpdateValue(), null, TimeSpan.FromMicroseconds(ScanRate),
+            TimeSpan.FromMicroseconds(ScanRate));
         ScanRate = scanRate;
+    }
+
+    public double Value
+    {
+        get
+        {
+            lock (lockObject)
+            {
+                return value;
+            }
+        }
     }
 
     public double Setpoint
@@ -43,9 +55,9 @@ public abstract class Sensor : IDisposable
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException("value", $"Value must be between {SafetyMin} and {SafetyMax}.");
+                    throw new ArgumentOutOfRangeException("value",
+                        $"Value must be between {SafetyMin} and {SafetyMax}.");
                 }
-
             }
         }
     }
@@ -68,8 +80,6 @@ public abstract class Sensor : IDisposable
     }
 }
 
-
-
 public class PressureSensor : Sensor
 {
     public PressureSensor(double safetyMin, double safetyMax, int scanRate) : base(safetyMin, safetyMax, scanRate)
@@ -83,4 +93,3 @@ public class TemperatureSensor : Sensor
     {
     }
 }
-
