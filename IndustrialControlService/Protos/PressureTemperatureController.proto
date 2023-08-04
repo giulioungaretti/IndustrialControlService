@@ -1,0 +1,45 @@
+syntax = "proto3";  
+  
+option csharp_namespace = "GrpcPressureTemperatureService";  
+  
+package PressureTemperature;  
+  
+service PressureTemperatureController {  
+  rpc GetPressureTemperature (PressureTemperatureRequest) returns (PressureTemperatureResponse);  
+  rpc SetTemperature (SetRequest) returns (PressureTemperatureSetResponse);  
+  rpc SetPressure (SetRequest) returns (PressureTemperatureSetResponse);  
+  rpc StreamPressureTemperature (StreamRequest) returns (stream PressureTemperatureResponse);  
+  rpc Start (StartRequest) returns (StatusResponse) {}
+  rpc Stop (StopRequest) returns (StatusResponse) {}
+}  
+
+message StartRequest {} 
+message StopRequest {} 
+  
+message PressureTemperatureRequest {  
+  string request_id = 1;  
+}  
+  
+message PressureTemperatureResponse {  
+  string request_id = 1;  
+  double pressure = 2;  
+  double temperature = 3;  
+}  
+  
+message SetRequest {  
+  string request_id = 1;  
+  double value = 2;  
+}  
+
+message PressureTemperatureSetResponse {  
+  string request_id = 1;  
+  bool success = 2;  
+}  
+  
+message StreamRequest {  
+  string request_id = 1;  
+}  
+
+message StatusResponse {
+	bool success = 1;
+}
