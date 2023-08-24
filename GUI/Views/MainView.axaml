@@ -12,10 +12,10 @@
   <DockPanel
     LastChildFill="True">
     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Height="50">
-      <Button Content="Start"  Margin="5"/>
-      <Button Content="Stop"  Margin="5"/>
-      <NumericUpDown Value="10" Margin="5"  />
-      <NumericUpDown Value="10" Margin="5"/>
+      <Button Content="Start"  Margin="5" VerticalAlignment="Center"/>
+      <Button Content="Stop"  Margin="5" VerticalAlignment="Center"/>
+      <NumericUpDown Value="10" Margin="5" VerticalAlignment="Center" />
+      <NumericUpDown Value="10" Margin="5" VerticalAlignment="Center"/>
     </StackPanel>
 
     <Border Background="Gray" DockPanel.Dock="Bottom" Height="20" Margin="0">
