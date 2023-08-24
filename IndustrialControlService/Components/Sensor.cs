@@ -1,5 +1,51 @@
 ﻿namespace IndustrialControlService.Components;
 
+//
+// public record Product(string Name, decimal Price);
+// public record OrderLine(Product Product, int Quantity);
+//
+// public enum DiscountType { Percentage, FixedAmount };
+// public record Discount(DiscountType Type, decimal Value);
+//
+// public record Order(List<OrderLine> OrderLines, Discount Discount)
+// {
+//     public decimal CalculateTotalPrice() 
+//     {
+//         var subtotal = OrderLines.Sum(ol => ol.Product.Price * ol.Quantity);
+//         var totalDiscount = Discount switch
+//         {
+//             { Type: DiscountType.Percentage } => subtotal * Discount.Value / 100M,
+//             { Type: DiscountType.FixedAmount } => Discount.Value,
+//             _ => 0M
+//         };
+//
+//         return subtotal - totalDiscount;
+//     }
+// }
+
+// public record Product(string Name, decimal Price);
+// public record OrderLine(Product Product, int Quantity);
+//
+// public  record Discount 
+// {
+//     public record Percentage(decimal Value) : Discount();
+//     public record FixedAmount(decimal Value) : Discount();
+// }
+//
+// public record Order(List<OrderLine> OrderLines, Discount Discount)
+// {
+//     public decimal CalculateTotalPrice()
+//     {
+//         var subtotal = OrderLines.Sum(ol => ol.Product.Price * ol.Quantity);
+//         return subtotal - Discount switch
+//         {
+//             Discount.Percentage { } percentage => subtotal * percentage.Value / 100M,
+//             Discount.FixedAmount { } amount => amount.Value,
+//             _ => 0M
+//         };
+//     }
+// }
+//
 public abstract class Sensor : IDisposable
 {
     private double value;

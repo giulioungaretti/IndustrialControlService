@@ -2,7 +2,7 @@
 using Grpc.Net.Client;
 using GrpcPressureTemperatureService;
 
-using var channel = GrpcChannel.ForAddress("https://localhost:7219");
+using var channel = GrpcChannel.ForAddress("http://localhost:32791");
 
 
 var client = new PressureTemperatureController.PressureTemperatureControllerClient(channel);

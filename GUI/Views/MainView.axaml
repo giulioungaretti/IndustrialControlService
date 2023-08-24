@@ -12,7 +12,8 @@
   <DockPanel
     LastChildFill="True">
     <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Height="50">
-      <Button Content="Start"  Margin="5" VerticalAlignment="Center"/>
+      <Button Name="StartButton" Command="{Binding PerformAction}" Content="Start"  Margin="5" 
+              VerticalAlignment="Center"/>
       <Button Content="Stop"  Margin="5" VerticalAlignment="Center"/>
       <NumericUpDown Value="10" Margin="5" VerticalAlignment="Center" />
       <NumericUpDown Value="10" Margin="5" VerticalAlignment="Center"/>
