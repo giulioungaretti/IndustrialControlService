@@ -6,23 +6,26 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="GUI.Views.MainView"
              x:DataType="vm:MainViewModel">
-  <Design.DataContext>
-    <vm:MainViewModel />
-  </Design.DataContext>
-  <DockPanel
-    LastChildFill="True">
-    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Height="50">
-      <Button Name="StartButton" Command="{Binding PerformAction}" Content="Start"  Margin="5" 
-              VerticalAlignment="Center"/>
-      <Button Content="Stop"  Margin="5" VerticalAlignment="Center"/>
-      <NumericUpDown Value="10" Margin="5" VerticalAlignment="Center" />
-      <NumericUpDown Value="10" Margin="5" VerticalAlignment="Center"/>
-    </StackPanel>
+    <Design.DataContext>
+        <vm:MainViewModel />
+    </Design.DataContext>
+    <DockPanel
+        LastChildFill="True">
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Height="50">
+            <Button Name="StartButton"
+                    Command="{Binding PerformAction}" 
+                    Content="Start"
+                    Margin="5"
+                    VerticalAlignment="Center" />
+            <Button Content="Stop" Margin="5" VerticalAlignment="Center" />
+            <NumericUpDown Value="10" Margin="5" VerticalAlignment="Center" />
+            <NumericUpDown Value="10" Margin="5" VerticalAlignment="Center" />
+        </StackPanel>
 
-    <Border Background="Gray" DockPanel.Dock="Bottom" Height="20" Margin="0">
-    </Border>
-    <Border Background="Red"   Margin="10">
-    </Border>
+        <Border Background="Gray" DockPanel.Dock="Bottom" Height="20" Margin="0">
+        </Border>
+        <Border Background="Red" Margin="10">
+        </Border>
 
-  </DockPanel>
+    </DockPanel>
 </UserControl>
